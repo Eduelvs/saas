@@ -1,29 +1,30 @@
 import {
-  AreaChart,
+  Activity,
+  AlertCircle,
+  ArrowDownRight,
+  ArrowUpRight,
+  Bot,
+  CheckCircle,
+  Clock,
+  ExternalLink,
+  MessageSquare,
+  MoreHorizontal,
+  Sparkles,
+  TrendingUp,
+  Zap,
+} from "lucide-react";
+import React from "react";
+import {
   Area,
+  AreaChart,
+  Bar,
+  BarChart,
+  CartesianGrid,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  BarChart,
-  Bar,
 } from "recharts";
-import {
-  Bot,
-  MessageSquare,
-  TrendingUp,
-  CheckCircle,
-  ArrowUpRight,
-  ArrowDownRight,
-  Activity,
-  Clock,
-  Zap,
-  MoreHorizontal,
-  ExternalLink,
-  Sparkles,
-  AlertCircle,
-} from "lucide-react";
 
 const messageData = [
   { time: "00:00", messages: 42, resolved: 38 },

@@ -1,23 +1,21 @@
-import { useState } from "react";
 import {
-  MessageCircle,
-  Globe,
-  Code2,
-  Slack,
   Bot,
   Check,
-  Plus,
-  Settings,
-  ExternalLink,
-  RefreshCw,
-  AlertCircle,
-  ChevronRight,
-  Zap,
+  Code2,
   Copy,
+  ExternalLink,
   Eye,
   EyeOff,
+  Globe,
+  MessageCircle,
+  Plus,
+  RefreshCw,
+  Settings,
+  Slack,
   Webhook,
+  Zap
 } from "lucide-react";
+import React, { useState } from "react";
 
 const integrations = [
   {

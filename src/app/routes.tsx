@@ -1,12 +1,8 @@
+import React from "react";
 import { createBrowserRouter } from "react-router";
-import { Layout } from "./components/layout/Layout";
-import { Dashboard } from "./pages/Dashboard";
-import { ChatbotConfig } from "./pages/ChatbotConfig";
-import { Messages } from "./pages/Messages";
-import { Integrations } from "./pages/Integrations";
-import { SettingsPage } from "./pages/Settings";
-import { DesignSystem } from "./pages/DesignSystem";
 
+import { Layout } from "./components/layout/Layout";
+import { ChatbotConfig, Dashboard, DesignSystem, Integrations, Login, Messages, SettingsPage } from "./pages";
 function NotFound() {
   return (
     <div className="flex items-center justify-center h-full">
@@ -19,6 +15,10 @@ function NotFound() {
 }
 
 export const router = createBrowserRouter([
+  {
+    path: "/login",
+    Component: Login,
+  },
   {
     path: "/",
     Component: Layout,

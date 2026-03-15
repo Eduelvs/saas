@@ -1,6 +1,7 @@
-import { Search, Bell, ChevronDown, Wifi, WifiOff, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { Bell, Search, Sparkles, Wifi, WifiOff } from "lucide-react";
+import React, { useState } from "react";
 import { useLocation } from "react-router";
+import { TopbarProfile } from "./TopbarProfile";
 
 const pageTitles: Record<string, { title: string; subtitle: string }> = {
   "/": { title: "Dashboard", subtitle: "Overview of your AI platform" },
@@ -183,41 +184,7 @@ export function Topbar() {
         </button>
 
         {/* Profile */}
-        <button
-          className="flex items-center gap-2 rounded-[8px] pl-1 pr-2 transition-all"
-          style={{
-            height: 36,
-            background: "var(--surface)",
-            border: "1px solid var(--border-default)",
-            cursor: "pointer",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "var(--surface-elevated)";
-            (e.currentTarget as HTMLElement).style.borderColor = "var(--border-medium)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "var(--surface)";
-            (e.currentTarget as HTMLElement).style.borderColor = "var(--border-default)";
-          }}
-        >
-          <div
-            className="flex items-center justify-center rounded-full"
-            style={{
-              width: 26,
-              height: 26,
-              background: "linear-gradient(135deg, #7C3AED, #3B82F6)",
-              fontSize: "0.625rem",
-              fontWeight: 600,
-              color: "#fff",
-            }}
-          >
-            AC
-          </div>
-          <span style={{ fontSize: "0.8125rem", fontWeight: 500, color: "var(--text-primary)" }}>
-            Alex
-          </span>
-          <ChevronDown size={12} style={{ color: "var(--text-tertiary)" }} />
-        </button>
+        <TopbarProfile />
       </div>
     </header>
   );

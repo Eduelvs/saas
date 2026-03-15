@@ -1,25 +1,19 @@
 import {
-  Sparkles,
-  Check,
-  X,
   AlertCircle,
-  Info,
-  Bot,
-  Zap,
-  Settings,
-  MessageSquare,
   ArrowRight,
-  Star,
-  TrendingUp,
-  Users,
   BarChart3,
-  Loader2,
-  ChevronDown,
-  Bell,
-  Search,
-  Send,
+  Bot,
+  Check,
   CheckCheck,
+  ChevronDown,
+  Loader2,
+  MessageSquare,
+  Send,
+  Sparkles,
+  TrendingUp,
+  Zap
 } from "lucide-react";
+import React, { useState } from "react";
 
 // ── Section wrapper ──────────────────────────────────────
 function Section({

@@ -1,24 +1,20 @@
-import { useState } from "react";
 import {
-  User,
-  Building,
-  Shield,
-  Key,
-  CreditCard,
   Bell,
-  Globe,
-  Palette,
-  Database,
-  ChevronRight,
+  Building,
   Check,
-  Upload,
-  Trash2,
-  Plus,
+  Copy,
+  CreditCard,
   Eye,
   EyeOff,
-  Copy,
-  RefreshCw,
+  Globe,
+  Key,
+  Plus,
+  Shield,
+  Trash2,
+  Upload,
+  User
 } from "lucide-react";
+import React, { useState } from "react";
 
 const sections = [
   { id: "profile", label: "Profile", icon: User },

@@ -1,24 +1,22 @@
-import { useState } from "react";
 import {
   Bot,
-  Sparkles,
-  Shield,
-  MessageSquare,
-  Settings,
-  Plus,
-  Trash2,
   ChevronDown,
-  ChevronUp,
-  Save,
-  Play,
-  Pause,
-  Info,
-  AlertCircle,
   Code,
-  Sliders,
   Globe,
+  Info,
   Lock,
+  MessageSquare,
+  Pause,
+  Play,
+  Plus,
+  Save,
+  Settings,
+  Shield,
+  Sliders,
+  Sparkles,
+  Trash2
 } from "lucide-react";
+import React, { useState } from "react";
 
 const tabs = [
   { id: "general", label: "General", icon: Settings },

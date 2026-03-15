@@ -1,21 +1,21 @@
-import { useState, useRef, useEffect } from "react";
 import {
+  ArrowUpRight,
+  Bot,
+  Check,
+  CheckCheck,
+  Circle,
+  Clock,
+  Filter,
+  MoreHorizontal,
+  Paperclip,
+  Phone,
   Search,
   Send,
-  Bot,
-  User,
-  MoreHorizontal,
-  Phone,
-  ArrowUpRight,
-  Sparkles,
-  Clock,
-  CheckCheck,
-  Check,
-  Paperclip,
   Smile,
-  Filter,
-  Circle,
+  Sparkles,
+  User,
 } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 
 const conversations = [
   {
