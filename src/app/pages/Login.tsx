@@ -2,22 +2,26 @@ import { Eye, LogIn, Mail, Sparkles } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { Input } from "../components/ui/input";
+import { useLogin } from "../services/queries/auth";
+
+
 
 export function Login() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
-  
-	function handleSubmit(e: React.FormEvent) {
-		e.preventDefault();
-		// TODO: integrar auth
-		navigate("/");
-	}
+	const loginMutation = useLogin();
 
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		try {
+			await loginMutation.mutateAsync({ email, password });
+			navigate("/");
+		} catch {}
+	};
 	return (
 		<div
 			className="min-h-screen flex bg-purple-900/5">
-			{/* Painel esquerdo: branding + gradiente */}
 			<div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
 				<div
 					className="absolute inset-0 gradient-brand-subtle"
@@ -68,10 +72,8 @@ export function Login() {
 				</div>
 			</div>
 
-			{/* Painel direito: formulário */}
 			<div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-10">
 				<div className="w-full max-w-[400px]">
-					{/* Título no mobile */}
 					<div className="lg:hidden flex items-center justify-center gap-2 mb-8">
 						<div
 							className="w-10 h-10 rounded-lg flex items-center justify-center"
@@ -166,9 +168,13 @@ export function Login() {
 								</a>
 							</div>
 
-							<button type="submit" className="btn-primary w-full flex items-center justify-center gap-2 py-3" onClick={() => navigate("/")}>
+							<button
+								type="submit"
+								disabled={loginMutation.isPending}
+								className="btn-primary w-full flex items-center justify-center gap-2 py-3 disabled:opacity-60"
+							>
 								<LogIn className="w-4 h-4" />
-								Entrar
+								{loginMutation.isPending ? "Entrando…" : "Entrar"}
 							</button>
 						</form>
 
